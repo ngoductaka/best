@@ -1,4 +1,5 @@
-``` var indexGoal = this.filterSelected.indexOf(healthGoal);
+``` 
+var indexGoal = this.filterSelected.indexOf(healthGoal);
             if (healthGoal === "all") {
                 this.filterSelected = ["all"];
             } else {
@@ -11,4 +12,5 @@
                 } else { // if not include before
                     this.filterSelected.push(healthGoal);
                 }
-            } ```
+            } 
+```

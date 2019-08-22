@@ -43,3 +43,28 @@ function insertionSort(array) {
 
 // test array:
 // [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
+
+function quicksort(A, lo, hi){
+  if (lo < hi){
+      let p = partition(A, lo, hi)
+      quicksort(A, lo, p - 1)
+      quicksort(A, p + 1, hi)
+  }
+}
+function partition(A, lo, hi) {   
+  let pivot = A[hi]
+  let i = lo
+  for(let j = lo; j< hi; j++){
+    if( A[j] < pivot) {
+      console.log(i,j);
+      [A[i], A[j]] = [A[j], A[i]]
+      i = i + 1
+    }
+  }
+  [A[i], A[hi]] = [A[hi], A[i]];
+  console.log(A);
+  return i;
+}
+const a = [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92];
+const r = quicksort(a, 0, a.length-1)
+console.log(a)
